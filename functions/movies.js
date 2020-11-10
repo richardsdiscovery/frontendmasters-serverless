@@ -1,3 +1,5 @@
+const { URL } = require('url');
+const fetch = require('node-fetch');
 const movies = require('../data/movies.json');
 
 exports.handler = async () => {

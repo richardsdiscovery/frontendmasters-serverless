@@ -21,3 +21,19 @@
 <div data-netlify-identity-button></div>
 
 <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<script>
+  function handleLogin(user) {
+    if (!user || !user.token) {
+      return;
+    };
+
+    // If we get there, someone is logged in
+    // Redirect to the admin page
+    window.location.pathname = '/admin/';
+  }
+
+  // Run the function on these two instances
+  window.netlifyIdentity.on('init', handleLogin);
+  window.netlifyIdentity.on('login', handleLogin);
+</script>
